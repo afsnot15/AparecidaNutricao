@@ -3,12 +3,9 @@ var pacientes = document.querySelectorAll(".paciente");
 var tabela = document.querySelector("#tabela-pacientes");
 
 tabela.addEventListener("dblclick", function (event) {
-    event.target.parentNode.remove();
-});
+    event.target.parentNode.classList.add("fadeOut");
 
-//pacientes.forEach(paciente => {
- //   paciente.addEventListener("dblclick", function () {
-   //     console.log("Fui clicado com duplo click");
-     //   this.remove();
-    //});
-//});
+    setTimeout(function () {
+        event.target.parentNode.remove();
+    }, 500);
+});
